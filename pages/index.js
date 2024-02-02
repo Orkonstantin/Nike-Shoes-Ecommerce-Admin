@@ -3,22 +3,31 @@ import { useSession } from "next-auth/react";
 //
 import ProductCount from "@/components/ProductCount";
 import OrderCount from "@/components/OrderCount";
+import Image from "next/image";
 
 export default function Home() {
   const { data: session } = useSession();
   // console.log("session: ", { session });
+  const imageSrc = session?.user?.image;
+  const userName = session?.user?.name;
   return (
     <Layout>
       <div className={"text-highlight flex justify-between"}>
         <h2>
-          Hello, <b>{session?.user?.name}</b>
+          Hello, <b>{userName}</b>
         </h2>
         <div
           className={
             "flex bg-gray-300 gap-1 text-black rounded-lg overflow-hidden"
           }
         >
-          <img src={session?.user?.image} alt="" className={"w-8 h-8"} />
+          <Image
+            src={imageSrc}
+            alt={userName}
+            width={32}
+            height={32}
+            // className={"w-8 h-8"}
+          />
           <span
             className="
             font-semibold
