@@ -5,6 +5,9 @@
 *{
     @apply font-semibold;
 }
+html,body{
+    @apply bg-bgGray;
+}
 img{
     max-height:100%;
 }
@@ -25,12 +28,15 @@ label{
     @apply bg-primary text-white px-4 py-1 rounded-sm shadow-sm;
 }
 table.basic{
-    @apply w-full  bg-highlight rounded-sm shadow-md;
+    @apply w-full bg-highlight rounded-sm shadow-md;
+    /* @apply bg-white rounded-sm shadow-md; */
+
+    ;
 }
 table.basic thead tr td,
 table.basic thead tr th
 {
-    @apply text-base font-extrabold text-gray-600 uppercase border-b border-gray-200 px-4 py-2;
+    @apply  font-extrabold text-gray-600 uppercase border-b border-gray-200 px-4 py-2;
 }
 table.basic tr td{
     @apply  px-4 py-1;
@@ -48,4 +54,13 @@ table.basic a{
 
 .btn-default{
     @apply bg-white text-gray-800 px-4 py-1 rounded-sm border border-gray-200 shadow-sm;
+}
+@media screen and (max-width: 640px){
+    table.basic tr td{
+        @apply  px-1 py-2;
+    }
+    table.basic thead tr th
+    {
+        @apply  px-2 py-1;
+    }
 }

@@ -1,11 +1,27 @@
 import Layout from "@/components/Layout";
-import { useEffect, useState } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState([]);
   const [products, setProducts] = useState([]);
   const [paidFilter, setPaidFilter] = useState("ALL");
+  const [screenSize, setScreenSize] = useState(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1024) {
+        setScreenSize(1);
+      } else {
+        setScreenSize(2);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     axios.get("/api/orders").then((response) => {
@@ -29,18 +45,10 @@ export default function OrdersPage() {
       <h1>Orders</h1>
       <label>Filter by paid status: </label>
       <select
-        className="
-        bg-white
-        text-gray-600
-        appearance-none
-        border-2
-        border-gray-300
-        rounded-lg
-        leading-tight
-        focus:outline-none
-        focus:border-gray-500
-        w-1/12
-        "
+        className={`bg-white text-gray-600 appearance-none border-2 border-gray-300 rounded-lg
+        leading-tight focus:outline-none focus:border-gray-500 ${
+          screenSize === 1 ? "w-2/12 flex" : "w-1/12"
+        }`}
         value={paidFilter}
         onChange={(e) => setPaidFilter(e.target.value)}
       >
@@ -49,16 +57,13 @@ export default function OrdersPage() {
         <option value="NO">No</option>
       </select>
       <table
-        className="basic
-      table-auto
-      w-full
-      text-center
-      rounded-lg
-      overflow-hidden
-      "
+        className={`basic table-auto w-full text-center rounded-lg overflow-hidden`}
       >
         <thead>
-          <tr>
+          <tr
+            className={`
+         ${screenSize === 1 ? "text-xs" : "text-normal"}`}
+          >
             <th>Date</th>
             <th>Paid</th>
             <th>Recipient</th>
@@ -71,18 +76,9 @@ export default function OrdersPage() {
             filteredOrders.map((order) => (
               <tr
                 key={order._id}
-                className="
-                text-sm hover:bg-gray-200
-                transition
-                duration-300
-                ease-in-out
-                hover:-translate-y-1
-                hover:scale-105
-                cursor-pointer
-                hover:shadow-xl
-                border-4
-                border-gray-400
-                "
+                className={`hover:bg-gray-200 transition duration-300 ease-in-out 
+                hover:-translate-y-1 hover:scale-105 cursor-pointer hover:shadow-xl border-4
+                border-gray-400  ${screenSize === 1 ? "text-xs" : "text-sm"}`}
               >
                 <td>{new Date(order.createdAt).toLocaleString()}</td>
                 <td className={order.paid ? "text-green-600" : "text-red-600"}>
