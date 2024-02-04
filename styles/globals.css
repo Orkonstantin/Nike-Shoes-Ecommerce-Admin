@@ -30,8 +30,6 @@ label{
 table.basic{
     @apply w-full bg-highlight rounded-sm shadow-md;
     /* @apply bg-white rounded-sm shadow-md; */
-
-    ;
 }
 table.basic thead tr td,
 table.basic thead tr th

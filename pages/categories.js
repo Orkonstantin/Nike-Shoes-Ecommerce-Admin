@@ -1,7 +1,6 @@
 import Layout from "@/components/Layout";
 import axios from "axios";
 import { useEffect, useState } from "react";
-
 import { withSwal } from "react-sweetalert2";
 
 function Categories({ swal }) {

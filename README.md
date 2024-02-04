@@ -1,16 +1,17 @@
-# Ecommerce Admin Panel
+# Nike Shoes E-commerce Admin Panel
 
 This is a Next.js project for an ecommerce admin panel. It provides a user interface for managing products, orders, and categories.
 
 ## Project Description
 
-The Ecommerce Admin Panel is designed to simplify the management of an ecommerce website. It offers a user-friendly interface for managing products, orders, and categories. This project is ideal for ecommerce store owners, administrators, and developers who want to streamline their backend operations.
+The Ecommerce Admin Panel is designed to simplify the management of an ecommerce website. It offers a user-friendly interface for managing products, orders, and categories.  
+This project is ideal for ecommerce store owners, administrators, and developers who want to streamline their backend operations.
 
 ## Features
 
-- Product Management: Add, update, and delete products.
-- Order Management: View and manage customer orders.
-- Category Management: Create and manage product categories.
+- Product Management: Add, update, and delete products using the intuitive product management interface.
+- Order Management: View and manage customer orders, including order details and status updates.
+- Category Management: Create and manage product categories to organize your inventory effectively.
 
 ## Installation and Setup Instructions
 
@@ -28,15 +29,8 @@ To get started with the Ecommerce Admin Panel, follow these steps:
     ```
 5. Open http://localhost:3000 in your browser to access the admin panel.
 
-## Usage Instructions
 
-Once the Ecommerce Admin Panel is up and running, you can perform the following actions:
-
-- Product Management: Add, update, and delete products using the intuitive product management interface.
-- Order Management: View and manage customer orders, including order details and status updates.
-- Category Management: Create and manage product categories to organize your inventory effectively.
-
-### Components
+## Components
 
 The project includes several reusable components:
 
@@ -48,7 +42,7 @@ The project includes several reusable components:
 - [ProductForm](components/ProductForm.js): A form for adding and updating products.
 - [Spinner](components/Spinner.js): A spinner component for loading states.
 
-### Libraries
+## Libraries
 
 The project uses the following libraries:
 
@@ -66,8 +60,7 @@ The Ecommerce Admin Panel exposes a RESTful API for integrating with other syste
 - `GET /api/orders`: Retrieve a list of all orders.
 - `PUT /api/orders/:id`: Update the status of an order.
 
-More details about the request and response formats can be found in the API documentation.
+## Acknowledgments
 
-### Contributing
-
-Contributions are welcome. Please open an issue or submit a pull request.
+The product images and details used in this project are sourced from the official Nike website. I acknowledge and appreciate the high-quality images and detailed product descriptions provided by Nike.  
+Please note that these images and product details are used for educational and illustrative purposes only.
